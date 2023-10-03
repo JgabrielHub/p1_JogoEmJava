@@ -3,9 +3,9 @@ public class Personagem {
   //atributos ou propriedades
   private String nome;
   private int energia = 10;
-  private int fome = 0;
+  private int fome = 10;
   private int sono = 0;
-  private int item = 4;
+  private int item = 0;
 
   //construtor: lista de parâmetros vazia
   // Personagem(){
@@ -43,14 +43,16 @@ public class Personagem {
   }
 
   void comer(){
-    if (fome >= 1){
+    if (fome >= 1 && item >= 1){
       System.out.println(nome + " comendo...");
       // operador ternário
       energia = energia + 1 > 10 ? 10 : energia + 1;
       fome--;
-    }
-    else{
+      item--;
+    } else if(item >= 1){
       System.out.println(nome + " sem fome...");
+    } else{
+      System.out.println(nome + " sem alimento...");
     }
   }
 
