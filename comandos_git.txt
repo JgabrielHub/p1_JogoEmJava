@@ -7,3 +7,11 @@ git status -s
 git commit -m "p1(jogo): morte do personagem"
 git log
 
+-- comandos ex2
+git status -s
+git add .
+git status -s
+git commit -m "p1(jogo): estoque de itens"
+git remote -v
+git remote add github <url>
+git push -u github main
