@@ -3,13 +3,12 @@ public class Jogo {
   public static void main(String[] args) throws Exception {
     var gerador = new Random();
     var personagem = new Personagem("John");
-    var soneca = new Personagem("Soneca", 0, 4, 10);
-    //nasce com muito sono e sem energia. fome mais ou menos
-    //ele tem probabilidade 80% de dormir
-    //10% de caçar
-    //10% de comer
+    
+    
     while(true){
-      int oQueFazer = gerador.nextInt(3); //[0..3[
+      int oQueFazer = gerador.nextInt(4); //[0..3[
+      
+      personagem.morrer();
       switch(oQueFazer){
         case 0:
           personagem.cacar();
@@ -20,19 +19,15 @@ public class Jogo {
         case 2:
         personagem.dormir();
         break;
+        case 3:
+        personagem.morrer();
+        break;
       }
       personagem.exibirEstado();
-      System.out.println("--------------------");
-      var oQueOSonecaVaiFazer = gerador.nextDouble();
-      if (oQueOSonecaVaiFazer <= 0.8)
-        soneca.dormir();
-      else if (oQueOSonecaVaiFazer <= 0.9)
-        soneca.comer();
-      else
-        soneca.cacar();
-      soneca.exibirEstado();
+      
+      
       System.out.println("********************");
-      Thread.sleep(8000);
+      Thread.sleep(1000);
     }
   }
 }

@@ -1,0 +1,9 @@
+-- comandos ex1
+git init
+git clone https://github.com/professorbossini/20232_fatec_ipi_poo_jogo_cacador.git
+git status -s
+git add .
+git status -s
+git commit -m "p1(jogo): morte do personagem"
+git log
+

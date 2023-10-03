@@ -2,7 +2,7 @@ public class Personagem {
  
   //atributos ou propriedades
   private String nome;
-  private int energia = 10;
+  private int energia = 1;
   private int fome = 0;
   private int sono = 0;
 
@@ -71,5 +71,13 @@ public class Personagem {
       sono
     );
   }
+
+  void morrer(){
+      if (energia <= 0){
+        System.out.println(nome + " morreu");
+        System.exit(0);
+      }
+  }
+  
  
 }
