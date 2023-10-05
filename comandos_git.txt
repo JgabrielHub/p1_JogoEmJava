@@ -32,3 +32,14 @@ git add.
 git status
 git commit -m "p1(jogo): novo personagem"
 git push -u github main
+
+-- comandos ex5
+
+git log
+git status -s
+git add .
+git status -s
+git commit -m "p1(jogo): batalha de personagens"
+git tag -a v2.0.0 -m "p1 jogo completo"
+git push -u github main
+git push github --tags

@@ -2,7 +2,7 @@ public class Personagem {
 
   // atributos ou propriedades
   private String nome;
-  private int energia = 5;
+  private int energia = 10;
   private int fome = 0;
   private int sono = 0;
   private int item = 4;
@@ -88,5 +88,32 @@ public class Personagem {
 
   public boolean vive() {
     return vivo;
+  }
+
+
+public String getNome(){
+  return nome;
+}
+public int getNivelEnergia(){
+  return energia;
+}
+
+public void diminuirEnergia(){
+  energia = energia - 1;
+}
+public void atacar(Personagem alvo){
+  if(vivo && alvo.vive()){
+          System.out.println("alvo energia:");
+          alvo.exibirEstado();
+          System.out.println("ataque:");
+      System.out.println(nome + " atacou " + alvo.getNome());
+      alvo.diminuirEnergia();
+      if(alvo.getNivelEnergia() <= 0){
+          System.out.println("alvo energia - 1:");
+          alvo.exibirEstado();
+          System.out.println("**************");
+          alvo.morrer();
+      }
+    }
   }
 }

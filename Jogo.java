@@ -12,7 +12,7 @@ public class Jogo {
     while (existeVivo(personagens)) {
       for (Personagem personagem : personagens) {
         if (personagem.vive()) {
-          int oQueFazer = gerador.nextInt(3); // [0..3[
+          int oQueFazer = gerador.nextInt(4); // [0..3[
 
           switch (oQueFazer) {
             case 0:
@@ -23,6 +23,15 @@ public class Jogo {
               break;
             case 2:
               personagem.dormir();
+              break;
+            case 3:
+              int indiceAtacante = gerador.nextInt(2);
+              int indiceAlvo = 1 - indiceAtacante; 
+              Personagem atacante = personagens.get(indiceAtacante);
+              Personagem alvo = personagens.get(indiceAlvo);
+              
+              
+              atacante.atacar(alvo);
               break;
           }
           personagem.exibirEstado();
